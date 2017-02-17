@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_sort_by_distance"
+        android:title="@string/action_sort_by_distance"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_sort_by_rating"
+        android:title="@string/action_sort_by_rating"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_share_list"
+        android:title="@string/action_share_list"
+        android:icon="@drawable/ic_share"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/action_random_pick_one"
+        android:title="@string/action_random_pick_one"
+        app:showAsAction="never"/>
+
+</menu>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<distanceSiMap>
+    <entry key="500" value="500 公尺"/>
+    <entry key="1000" value="1 公里"/>
+    <entry key="5000" value="5 公里"/>
+    <entry key="10000" value="10 公里"/>
+</distanceSiMap>

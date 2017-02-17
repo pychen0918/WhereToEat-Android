@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+    <include
+        android:id="@+id/single_toolbar"
+        layout="@layout/toolbar"/>
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/single_adview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+    </com.google.android.gms.ads.AdView>
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_above="@id/single_adview"
+        android:layout_below="@id/single_toolbar">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view"
+                android:elevation="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/card_vertical_margin"
+                android:layout_marginBottom="@dimen/card_vertical_margin"
+                android:layout_marginLeft="@dimen/card_horizontal_margin"
+                android:layout_marginRight="@dimen/card_horizontal_margin"
+                app:cardUseCompatPadding="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- The photo preview of the restaurant -->
+                    <android.support.percent.PercentRelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/imageview_thumbnail"
+                            android:layout_height="0dp"
+                            android:layout_width="0dp"
+                            app:layout_aspectRatio="178%"
+                            app:layout_widthPercent="100%"
+                            android:contentDescription="@string/content_description_thumbnail"
+                            android:scaleType="centerCrop"
+                            tools:src="@drawable/ic_map"
+                            android:adjustViewBounds="true"
+                            android:cropToPadding="false" />
+                    </android.support.percent.PercentRelativeLayout>
+
+                    <!-- Restaurant title -->
+                    <TextView
+                        android:id="@+id/textview_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="16dp"
+                        style="@style/Text.Single.Title"
+                        tools:text="This is the name of the restaurant, it is very long"
+                        />
+
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/textview_subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="16dp"
+                        tools:text="Here we list the types of this restaurant. The types are varied and can be very long. Steak-house, bar, pizza delivery, big hotel, and more."
+                        style="@style/Text.Single.Subtitle"
+                        />
+
+                    <!-- Rating bar & Distance -->
+                    <RelativeLayout
+                        android:id="@+id/rl_rating_distance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="12dp">
+                        <RatingBar
+                            android:id="@+id/rating_bar"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_centerVertical="true"
+                            tools:rating="4.5"
+                            style="@style/RatingBar.Custom" />
+                        <TextView
+                            android:id="@+id/textview_rating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_toRightOf="@id/rating_bar"
+                            android:layout_toEndOf="@id/rating_bar"
+                            tools:text="(4.5)"
+                            style="@style/Text.Body"/>
+                        <TextView
+                            android:id="@+id/textview_distance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            tools:text="1.0km"
+                            style="@style/Text.Body"
+                            />
+                    </RelativeLayout>
+
+                    <!-- Action buttons -->
+                    <RelativeLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="12dp">
+
+                        <Button
+                            android:id="@+id/button_open_map"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:text="@string/button_open_map"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:elevation="2dp"
+                            android:onClick="onClick"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+                        <Button
+                            android:id="@+id/button_phone_call"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_toRightOf="@id/button_open_map"
+                            android:layout_toEndOf="@id/button_open_map"
+                            android:text="@string/button_phone_call"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:elevation="2dp"
+                            android:onClick="onClick"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+                        <ImageButton
+                            android:id="@+id/button_toggle_detail"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_down_arrow"
+                            android:background="#00000000"
+                            android:scaleType="fitCenter"
+                            tools:text="Show Details"
+                            android:elevation="2dp"
+                            android:onClick="onClick"/>
+                    </RelativeLayout>
+
+                    <!-- Detail Partitions -->
+                    <LinearLayout
+                        android:id="@+id/ll_detail_container"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="12dp">
+                        <!-- Opening Hours -->
+                        <TextView
+                            android:id="@+id/detail_opening_hours"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            tools:text="Opening (14:00 - 23:00)"
+                            android:textAlignment="textStart"
+                            android:layout_gravity="start"
+                            style="@style/Text.Body"/>
+                        <!-- Address -->
+                        <include
+                            android:id="@+id/detail_address"
+                            layout="@layout/one_line_label_text"
+                        />
+                        <!-- Phone -->
+                        <include
+                            android:id="@+id/detail_phone"
+                            layout="@layout/one_line_label_text"
+                            />
+                        <!-- Website -->
+                        <include
+                            android:id="@+id/detail_website"
+                            layout="@layout/one_line_label_text"
+                            />
+                        <!-- Reviews -->
+                        <LinearLayout
+                            android:id="@+id/ll_review_container"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

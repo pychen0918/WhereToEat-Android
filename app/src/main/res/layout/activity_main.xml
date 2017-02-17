@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+    <include
+        android:id="@+id/main_toolbar"
+        layout="@layout/toolbar"/>
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/main_adview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+    </com.google.android.gms.ads.AdView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/main_adview"
+        android:layout_below="@id/main_toolbar">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:orientation="vertical">
+            <TextView
+                style="@style/Text.Single.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/title_main_activity" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/button_random"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="72dp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_map"
+                    android:onClick="onClick"
+                    android:text="@string/action_random_pick_one"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+                <Button
+                    android:id="@+id/button_list"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="72dp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_left_alignment"
+                    android:onClick="onClick"
+                    android:text="@string/action_list_all"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+            </LinearLayout>
+            <TextView
+                style="@style/Text.Spinner.Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/label_distance" />
+            <Spinner
+                android:id="@+id/spinner_distance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog">
+            </Spinner>
+            <TextView
+                style="@style/Text.Spinner.Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/label_type" />
+            <Spinner
+                android:id="@+id/spinner_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog">
+            </Spinner>
+
+            <LinearLayout
+                android:id="@+id/custom_search_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/Text.Spinner.Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/label_keyword" />
+
+                <com.pychen0918.wheretoeat.view.InstantAutoCompleteTextView
+                    android:id="@+id/autotext_keyword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:completionThreshold="1"
+                    android:dropDownHeight="wrap_content"
+                    android:dropDownWidth="wrap_content"
+                    android:ellipsize="end"
+                    android:hint="@string/hint_keyword"
+                    android:imeOptions="actionDone"
+                    android:maxLines="1" />
+            </LinearLayout>
+            <TextView
+                style="@style/Text.Spinner.Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/open_now" />
+            <Spinner
+                android:id="@+id/spinner_open_now"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:spinnerMode="dialog">
+            </Spinner>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

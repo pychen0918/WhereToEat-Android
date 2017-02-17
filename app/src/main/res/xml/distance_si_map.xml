@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<distanceSiMap>
+    <entry key="500" value="500 m"/>
+    <entry key="1000" value="1 km"/>
+    <entry key="5000" value="5 km"/>
+    <entry key="10000" value="10 km"/>
+</distanceSiMap>

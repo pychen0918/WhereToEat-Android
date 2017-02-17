@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<restaurantTypeMap>
+    <entry key="food" value="各類食品"/>
+    <entry key="restaurant" value="一般餐廳"/>
+    <entry key="bakery" value="西點麵包"/>
+    <entry key="cafe" value="咖啡簡餐"/>
+    <entry key="bar" value="酒吧"/>
+    <entry key="night_club" value="夜店"/>
+    <entry key="convenience_store" value="便利商店"/>
+    <entry key="grocery_or_supermarket" value="雜貨超市"/>
+    <entry key="shopping_mall" value="賣場百貨"/>
+    <entry key="meal_delivery" value="外送服務"/>
+    <entry key="meal_takeaway" value="外帶服務"/>
+    <entry
+        key="custom_search"
+        value="自訂搜尋關鍵字" />
+</restaurantTypeMap>

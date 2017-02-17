@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<restaurantTypeMap>
+    <entry key="food" value="Food"/>
+    <entry key="restaurant" value="Restaurant"/>
+    <entry key="bakery" value="Bakery"/>
+    <entry key="cafe" value="Cafe"/>
+    <entry key="bar" value="Bar"/>
+    <entry key="night_club" value="Night Club"/>
+    <entry key="convenience_store" value="Convenience Store"/>
+    <entry key="grocery_or_supermarket" value="Grocery or Supermarket"/>
+    <entry key="shopping_mall" value="Shopping Mall"/>
+    <entry key="meal_delivery" value="Meal Delivery"/>
+    <entry key="meal_takeaway" value="Meal Takeaway"/>
+    <entry
+        key="custom_search"
+        value="Custom Search Keyword" />
+</restaurantTypeMap>
